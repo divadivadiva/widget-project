@@ -1,0 +1,37 @@
+<nb-card>
+  <nb-card-header class="card-header"> Privacy Policy </nb-card-header>
+  <nb-card-body class="card-body">
+    <div class="row">
+      <ul class="arrow-list">
+        <li>
+          We will never sell or rent your personally identifiable information to
+          third parties for marketing purposes
+        </li>
+        <li>
+          We will never share your contact information with another user without
+          consent
+        </li>
+        <li>
+          All personally identifiable information you provide will be secured
+          using industry standard protocols and technology
+        </li>
+        <li>
+          Users have the ability to change what is public but the default
+          setting should err on the side of less public disclosure rather than
+          more
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <nb-checkbox (checkedChange)="toggle($event)" status="primary"
+        >J'accepte toutes les termes</nb-checkbox
+      >
+    </div>
+
+    <button nbButton status="success" [disabled]="!checked" (click)="next()">
+      Etape suivante
+      <nb-icon icon="chevron-right-outline"> </nb-icon>
+    </button>
+  </nb-card-body>
+</nb-card>

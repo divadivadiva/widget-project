@@ -1,0 +1,61 @@
+<nb-card>
+  <nb-card-header class="card-header"> Privacy Policy </nb-card-header>
+  <nb-card-body class="card-body">
+    <h3>Entrer vos identifiants</h3>
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <nb-form-field>
+          <nb-icon nbPrefix icon="at-outline" pack="eva"></nb-icon>
+          <input
+            type="text"
+            fullWidth
+            formControlName="username"
+            [status]="f.username.errors ? 'danger' : 'info'"
+            nbInput
+          />
+        </nb-form-field>
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <nb-form-field>
+          <input
+            [type]="typePassword"
+            formControlName="password"
+            fullWidth
+            [status]="f.password.errors ? 'danger' : 'info'"
+            nbInput
+          />
+          <button nbSuffix nbButton ghost (click)="toggleShowPassword()">
+            <nb-icon
+              [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+              pack="eva"
+              [attr.aria-label]="
+                showPassword ? 'hide password' : 'show password'
+              "
+            >
+            </nb-icon>
+          </button>
+        </nb-form-field>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <div class="submit-button">
+        <button
+          nbButton
+          [disabled]="form.invalid"
+          fullWidth
+          status="success"
+          (click)="onSubmit()"
+        >
+          Etape suivante
+          <nb-icon icon="chevron-right-outline"> </nb-icon>
+        </button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

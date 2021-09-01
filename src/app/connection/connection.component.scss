@@ -1,0 +1,21 @@
+.invalid-feedback {
+  color: red;
+}
+.card-body {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+}
+.card-header {
+  text-align: center;
+}
+.submit-button {
+  margin-top: 30px;
+}
+.form-group {
+  text-align: initial;
+  margin: 20px;
+  label {
+    font-weight: 600;
+  }
+}
